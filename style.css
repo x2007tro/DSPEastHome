@@ -80,7 +80,7 @@ body {
 
 #event_post_note_content {
   width:95%;
-  height:60%;
+  height:80%;
   position:absolute; 
   left:0; 
   right:0; 
@@ -93,7 +93,6 @@ body {
  * panel 2. Join us
  */
 #panel2_frame {
-  height:130px; 
   margin:0; 
   background-color:rgba(202, 197, 178, 1);    /* grey/yellow */
 }
@@ -101,12 +100,17 @@ body {
 #panel2_content {
   width:350px; 
   height:90%;
-  position:absolute; 
-  left:0; 
-  right:0; 
-  top:0; 
-  bottom:0; 
-  margin:auto;
+}
+
+#req_join {
+  color:rgba(250, 250, 250, 1);
+  background-color:rgba(250, 100, 100, 1);
+}
+
+.panel2_space {
+  width:100%;
+  height:20px;
+  background-color:transparent;
 }
 
 /*
@@ -160,7 +164,7 @@ body {
 
 .panel3_space {
   width:100%;
-  height:50px;
+  height:70px;
   background-color:transparent;
 }
 
@@ -180,7 +184,7 @@ body {
 
 .panel4_space {
   width:100%;
-  height:30px;
+  height:70px;
   background-color:transparent;
 }
  

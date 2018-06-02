@@ -1,14 +1,13 @@
 ##
-# Directory parameters
-##
-# dev_dir <- paste0("C:/Users/",Sys.info()["user"], "/OneDrive/Development/")
-# shiny_dir <- paste0(dev_dir, "Shiny/DSPEastHome/")
-# setwd(shiny_dir)
-
-##
 # Load helpers
 ##
-# source(paste0(shiny_dir, "Helper/ml_helper.R"))
+source("./helper/mailgun.R")
+source("./helper/sendEmail.R")
+
+##
+# Event data
+##
+event_wb_path <- "./input/event.xlsx"
 
 ##
 # UI parameters
@@ -28,13 +27,6 @@ gmap_custom_style <-
 ]'
 
 ##
-# CSS helper
+# Email list
 ##
-css_center <- "position:absolute; left:0; right:0; top:0; bottom:0; margin:auto;"
-
-##
-# Event data
-##
-event_wb_path <- "./input/event.xlsx"
-
-
+email_list <- c("kemin.business@gmail.com")
