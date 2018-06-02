@@ -18,7 +18,6 @@ event <- reactive({
   if(rec_cnt == 0){
     # if no active event, output error message and an empty data.frame
     msg <- "no active event"
-    event_full <- data.frame(field1 = numeric(0))
   } else {
     # if active event found, process event information
     event_info <- event_info_clean2[rec_cnt,]   # always use the latest record
