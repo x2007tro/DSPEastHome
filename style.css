@@ -1,0 +1,212 @@
+/*  
+ * general
+ */ 
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	background-image: url('fred_zeke.png');
+	background-attachment: fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	border-radius: 0;
+	border: 0;
+}
+
+/*
+ * panel 1. Big red event post
+ */
+#panel1_frame {
+  height:700px; 
+  margin:0; 
+  background-color:transparent;
+  position:relative;
+}
+
+#panel1_content {
+  width:380px; 
+  height:380px; 
+  background-color:rgba(250, 0, 0, 0.7); /* transparent red*/
+  position:absolute; 
+  left:0; 
+  right:0; 
+  top:0; 
+  bottom:0; 
+  margin:auto;
+}
+
+#event_post_dt_frame {
+  height:70px; 
+  margin:0; 
+  position:relative; 
+  border-bottom: 1px solid white;
+}
+
+#event_post_dt_content {
+  width:95%;
+  height:60%;
+  position:absolute; 
+  left:0; 
+  right:0; 
+  top:0; 
+  bottom:0; 
+  margin:auto;
+}
+
+#event_post_name_frame {
+  height:260px;
+  margin:0;
+  position:relative; 
+}
+
+#event_post_name_content {
+  width:95%;
+  height:80%;
+  position:absolute; 
+  left:0; 
+  right:0; 
+  top:0; 
+  bottom:0; 
+  margin:auto;
+}
+
+#event_post_note_frame {
+  height:70px;
+  margin:0;
+  position:relative;
+  border-top: 1px solid white;
+}
+
+#event_post_note_content {
+  width:95%;
+  height:60%;
+  position:absolute; 
+  left:0; 
+  right:0; 
+  top:0; 
+  bottom:0; 
+  margin:auto;
+}
+
+/*
+ * panel 2. Join us
+ */
+#panel2_frame {
+  height:130px; 
+  margin:0; 
+  background-color:rgba(202, 197, 178, 1);    /* grey/yellow */
+}
+
+#panel2_content {
+  width:350px; 
+  height:90%;
+  position:absolute; 
+  left:0; 
+  right:0; 
+  top:0; 
+  bottom:0; 
+  margin:auto;
+}
+
+/*
+ * panel 3. Event when, where and about
+ */
+#panel3_frame {
+  margin:0; 
+  background-color:rgba(250, 250, 250, 1);   /* white */
+}
+
+#event_when_frame {
+  width:100%;
+  margin:0;
+  background-color:rgba(250, 250, 250, 1);  /* white */
+  float:right;
+  position:relative; 
+}
+
+#event_when_content {
+  width:75%; 
+  height:70%; 
+  background-color:transparent;   /* transparent */
+}
+
+#event_where_frame {
+  width:100%;
+  margin:0;
+  background-color:rgba(250, 250, 250, 1);  /* white */
+  float:left;
+  position:relative; 
+}
+
+#event_where_content {
+  width:75%; 
+  height:70%; 
+  background-color:transparent;
+}
+
+#event_about_frame {
+  width:100%;
+  margin:0; 
+  background-color:rgba(250, 250, 250, 1); /* white */
+  position:relative;
+}
+
+#event_about_content {
+  width:80%; 
+  height:90%; 
+  background-color:transparent;
+}
+
+.panel3_space {
+  width:100%;
+  height:50px;
+  background-color:transparent;
+}
+
+/*
+ * panel 4. Schedule
+ */
+#panel4_frame {
+  margin:0; 
+  background:rgba(250, 25, 25, 0.7);  /* light red transparent */
+  position:relative;
+}
+
+#panel4_content {
+  width:75%;
+  margin:auto;
+}
+
+.panel4_space {
+  width:100%;
+  height:30px;
+  background-color:transparent;
+}
+ 
+/*
+ * panel 5. Google map
+ */
+#panel5 {
+  margin:0;
+}
+
+/*
+ * panel 6. Copyright
+ */
+#panel6_frame {
+  height:60px; 
+  margin:0; 
+  background-color:rgba(250, 250, 250, 1); /* white */
+}
+
+#panel6_content {
+  width:75%; 
+  height:50%;
+  position:absolute; 
+  left:0; 
+  right:0; 
+  top:0; 
+  bottom:0; 
+  margin:auto;
+}
