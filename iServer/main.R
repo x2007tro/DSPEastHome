@@ -17,7 +17,7 @@ mainServer <- function(input, output, session) {
   ##
   # server function for panel2
   ##
-  #source("./iServer/home_p2_joinus.R", local = TRUE)
+  source("./iServer/home_p2_joinus.R", local = TRUE)
   
   ##
   # server function for panel3
