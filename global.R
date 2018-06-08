@@ -25,8 +25,3 @@ gmap_custom_style <-
 {"featureType":"road.arterial","elementType":"all","stylers":[{"color":"#ff7f7f"}]},
 {"featureType":"transit.station","elementType":"labels.text","stylers":[{"visibility":"off"}]}
 ]'
-
-##
-# Email list
-##
-email_list <- c("kemin.business@gmail.com")

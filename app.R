@@ -14,6 +14,7 @@ library(assertive)
 # Source server and ui components
 ##
 source("./global.R")
+source("./private/mailgun_keys.R")
 source("./iUI/main.R")
 source("./iServer/main.R")
 

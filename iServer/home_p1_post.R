@@ -8,14 +8,14 @@
 output$opt_event_post_dt <- renderUI({
   if(length(event()) == 0){
     list(
-      tags$h4(style = "color:white", "data processing error")
+      tags$h3(style = "color:white", "data processing error")
     )
   } else {
     opt_date <- event()$event_info$mth_day
     opt_time <- event()$event_start
     
     list(
-      tags$h4(style = "color:white", paste0(opt_date, " at ", opt_time))
+      tags$h3(style = "color:white", paste0(opt_date, " at ", opt_time))
     )
   }
 })
@@ -26,7 +26,7 @@ output$opt_event_post_dt <- renderUI({
 output$opt_event_post_name <- renderUI({
   if(length(event()) == 0){
     list(
-      tags$h2(style = "color:white", "data processing error")
+      tags$h1(style = "color:white", "data processing error")
     )
   } else {
     opt_event_names <- event()$event_names
@@ -47,13 +47,13 @@ output$opt_event_post_name <- renderUI({
 output$opt_event_post_loc <- renderUI({
   if(length(event()) == 0){
     list(
-      tags$h4(style = "color:white", "data processing error")
+      tags$h3(style = "color:white", "data processing error")
     )
   } else {
     opt_loc <- event()$event_info$loc_name
     
     list(
-      tags$h4(style = "color:white", paste0("@", opt_loc))
+      tags$h3(style = "color:white", paste0("@", opt_loc))
     )
   }
   

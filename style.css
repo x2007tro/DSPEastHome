@@ -37,7 +37,7 @@ body {
 }
 
 #event_post_dt_frame {
-  height:70px; 
+  height:90px; 
   margin:0; 
   position:relative; 
   border-bottom: 1px solid white;
@@ -55,7 +55,7 @@ body {
 }
 
 #event_post_name_frame {
-  height:260px;
+  height:220px;
   margin:0;
   position:relative; 
 }
@@ -72,7 +72,7 @@ body {
 }
 
 #event_post_note_frame {
-  height:70px;
+  height:90px;
   margin:0;
   position:relative;
   border-top: 1px solid white;

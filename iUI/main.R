@@ -1,7 +1,8 @@
 ##
 # Source all ui files
 ##
-ui_files <- c("home_p1_post", "home_p2_joinus", "home_p3_event", "home_p4_schedule", "home_p5_map", "home_p6_copyright")
+ui_files <- c("home_p1_post", "home_p2_joinus", "home_p3_event", "home_p4_schedule", "home_p5_map", "home_p6_copyright",
+              "about_main")
 lapply(ui_files, function(f){
   source(paste0("./iUI/", f, ".R"), local = FALSE)
 })
@@ -85,7 +86,13 @@ mainUI <- fluidPage(theme = shinythemes::shinytheme("simplex"),
 		# About us
 		##
 		tabPanel(
-			"About us"
+			"About us",
+			fluidRow(
+			  column(
+			    width = 12,
+			    div_about_main
+			  )
+			)
 		)
 	)
   )
