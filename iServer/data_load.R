@@ -116,3 +116,95 @@ event <- reactive({
   
   return(res)
 })
+
+##
+# Load blog
+##
+blog <- reactive({
+  # load blog info
+  blog_all <- readxl::read_excel(path = blog_wb_path,
+                                 sheet = "Blog",
+                                 skip = 2,
+                                 col_names = TRUE)
+  
+  # remove all the na rows, just in case
+  blog_clean1 <- blog_all[!is.na(blog_all$blog_id),]
+  
+  # select only active events
+  blog_clean2 <- blog_clean1[blog_clean1$active == 1,]
+  blog_clean2 <- as.data.frame(blog_clean2)
+  
+  # process blog only if at least one blog was found
+  if(nrow(blog_clean2) == 0){
+    # return empty list
+    res <- list()
+  } else {
+    ##
+    # process each blog content
+    res <- lapply(1:nrow(blog_clean2), function(i){
+      blg_title <- blog_clean2[i, "title"]
+      blg_subtitle <- blog_clean2[i, "subtitle"]
+      blg_author <- blog_clean2[i, "author"]
+      blg_blog_date <- format(blog_clean2[i, "blog_date"], "%Y-%m-%d")
+      blg_category <- blog_clean2[i, "category"]
+      
+      ##
+      # content process
+      fp <- blog_clean2[i, "content"]
+      conn <- file(paste0("./input/blogs/", fp), open = "r")
+      blg_content <- readLines(conn)
+      close.connection(conn)
+      
+      res1 <- list(
+        title = blg_title,
+        subtitle = blg_subtitle,
+        author = blg_author,
+        blog_date = blg_blog_date,
+        category = blg_category,
+        meat = blg_content
+      )
+    })
+  }
+  
+  return(res)
+})
+
+##
+# Load blogger
+##
+bloggers <- reactive({
+  # load blogger info
+  blogger_all <- readxl::read_excel(path = blog_wb_path,
+                                    sheet = "Blogger",
+                                    skip = 2,
+                                    col_names = TRUE)
+  
+  # remove all the na rows, just in case
+  blogger_clean1 <- blogger_all[!is.na(blogger_all$blogger_id),]
+  
+  # select only active events
+  blogger_clean2 <- blogger_clean1[blogger_clean1$active == 1,]
+  blogger_clean2 <- as.data.frame(blogger_clean2)
+  
+  # process blogger only if at least one blogger was found
+  if(nrow(blogger_clean2) == 0){
+    # return empty list
+    res <- list()
+  } else {
+    ##
+    # process each blogger content
+    res <- lapply(1:nrow(blogger_clean2), function(i){
+      blg_name <- blogger_clean2[i, "name"]
+      blg_occupation <- blogger_clean2[i, "occupation"]
+      blg_description <- blogger_clean2[i, "description"]
+      
+      res1 <- list(
+        name = blg_name,
+        occupation = blg_occupation,
+        description = blg_description
+      )
+    })
+  }
+  
+  return(res)
+})

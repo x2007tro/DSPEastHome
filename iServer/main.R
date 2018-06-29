@@ -33,4 +33,9 @@ mainServer <- function(input, output, session) {
   # server function for panel5
   ##
   source("./iServer/home_p5_map.R", local = TRUE)
+  
+  ##
+  # server function for blog post
+  ##
+  source("./iServer/blog.R", local = TRUE)
 }

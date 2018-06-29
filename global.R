@@ -8,6 +8,7 @@ source("./helper/sendEmail.R")
 # Event data
 ##
 event_wb_path <- "./input/event.xlsx"
+blog_wb_path <- "./input/blog.xlsx"
 
 ##
 # UI parameters
