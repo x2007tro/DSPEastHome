@@ -226,13 +226,13 @@ body {
 }
 
 .outter_blog_space {
-  height:5px;
+  height:10px;
 }
 
 #outter_blog_content {
-  width:98%;
-  color:rgba(250, 250, 250, 0.9);
-  margin:0 auto;
+  width:99%;
+  color:rgba(48, 59, 69, 1);  /* very dark gray */
+  margin:0 auto; 
 }
 
 /*
@@ -249,52 +249,80 @@ body {
 }
 
 #blog_nav_frame {
+  width:100%;
+  position:relative;
+}
+
+#outter_blog_frame {
+  width:100%;
+  position:relative;
+}
+
+#blog_nav_content {
+  width:200px;
+  position:fixed;
+}
+
+.inner_blog_nav_content {
+  width:99%;
+  margin:0 auto;
+}
+.inner_blog_post_frame {
   margin:0;
   border:0;
   padding:0;
 }
 
-.inner_blog_post_frame {
-  border-radius:5px;
-  background-color:rgba(0, 165, 114, 0.7); /* transparent green */
-}
-
 .inner_blog_post_space {
-  height:10px;
+  height:5px;
 }
 
 .inner_blog_post_content {
-  width:98%;
+  width:100%;
   margin:0 auto;
+  border-radius:5px;
+  background-color:rgba(255, 255, 255, 0.7); /* transparent green */
 }
 
-#inner_blog_nav_fame {
+.inner_bloggers_content2 {
+  width:99%;
+  margin:0 auto;
+}
+#inner_blog_nav_frame {
+  margin:0;
   border-radius:5px;
-  background-color:rgba(0, 165, 114, 0.7); /* transparent green */
+  background-color:rgba(255, 255, 255, 0.7); /* transparent green */
 }
 
 .inner_bloggers_frame, #blog_nav_content, #bloggers_content {
   border-radius:5px;
-  background-color:rgba(0, 165, 114, 0.7); /* transparent green */
 }
 
 .inner_blogger_space {
-  height:5px;
+  height:3px;
 }
 
 .inner_bloggers_content {
-  width:98%;
+  width:100%;
   margin:0 auto;
-  background-color:rgba(0, 165, 114, 0.7); /* transparent green */
+  border-radius:5px;
+  background-color:rgba(255, 255, 255, 0.7); /* transparent green */
 }
 
+.inner_blog_post_content2 {
+  width:99%;
+  margin:0 auto;
+}
 /*
  * blog connent setup
  */
-.blog_post_l1 {
-  margin:3px 0;
-  padding:0;
+.blog_post_l1, .blog_post_l1_eq {
+  margin:0;
+  border-radius:5px;
+  padding:5px 0;
   color:white;
+  font-weight:bold;
+  background-color:rgba(255, 0, 0, 0.8);
 }
 .blog_post_l2 {
   /*display:inline;*/
@@ -303,4 +331,19 @@ body {
 }
 .blog_post_l3 {
   display:block;
+  margin:3px 0;
+  padding:3px 0;
+}
+.blog_post_sep {
+  height:10px;
+}
+
+/*
+ * Blogger 
+ */
+.blogger_name{
+  padding:0;
+  margin:3px 0;
+  color:rgba(48, 59, 69, 1);
+  font-weight:bold;
 }

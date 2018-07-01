@@ -1,0 +1,66 @@
+Install Tensorflow GPU on the latest Ubuntu (18.04) is not straightforward.  I've successfully installed Tensorflow GPU on Ubuntu 16.04, but the same method doesn't applied when it comes to 18.04 LTS. After some trial and errors, here are the steps that finally works for me:
+
+1. Download and install the latest anaconda. The virtual environment I choose to run tensorflow is Anaconda, although many people might prefer virtualenv.
+
+2. Created a separate environment(named tensorflow_gpu), which is isolate of the tensorflow installation:
+$ conda create -n tensorflow-gpu python-3.6
+
+3. Install the appropriate Nvidia driver for the gpu.
+Add package repository:
+$ sudo add-apt-repository ppa:graphics-drivers/ppa
+
+Use the 384 version of the driver:
+$ sudo apt install nvidia-384 nvidia-384-dev
+
+$ sudo apt-get install mesa-common-dev
+$ sudo apt-get install freeglut3-dev
+
+$ sudo apt-get install g++ freeglut3-dev build-essential libx11-dev libxmu-dev libxi-dev libglu1-mesa libglu1-mesa-dev
+
+install GCC tool to compile necessary libraries (cuda 9 requires gcc6):
+$ sudo apt install gcc-6
+$ sudo apt install gcc+6
+
+Set up symlinks for gcc/g++
+$ sudo ln -s /usr/bin/gcc-6 /usr/local/cuda/bin/gcc
+$ sudo ln -s /usr/bin/g++-6 /usr/local/cuda/bin/g++
+
+5. Find the compatible version of Nvidia CUDA and cuDNN for most updated tensorflow, then download and install. In this case, for TensorFlow 1.8, I used CUDA Toolkit 9.0 and cuDNN v7. Here are the steps:
+
+$ cd ~/Downloads
+$ chmod +x cuda_9.0.176_384.81_linux-run
+$ sudo ./cuda_9.0.176_384.81_linux-run --override
+
+DO NOT install CUDA driver since we used 384 driver from previously.
+Install NVIDIA Accelerated Graphics Driver for Linux-x86_64 ...?
+(y)es/(n)o/(q)uit: n
+
+Add CUDA commands to be added to the system path, edit the file ~/.bashrc
+
+Add the following two lines to the end of the file:
+$ export PATH=/usr/local/cuda-9.0/bin${PATH:+:${PATH}}
+$ export LD_LIBRARY_PATH=/usr/local/cuda-9.0/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}
+
+Run nvidia-smi to check if driver is successfully installed.
+
+Now install cuDNN:
+$ cd ~/Downloads
+$ tar -zxvf cudnn-9.0-linux-x64-v6.0-ga.tgz
+$ sudo cp cuda/include/cudnn.h /usr/local/cuda/include/
+$ sudo cp cuda/lib64/libcudnn* /usr/local/cuda/lib64/
+$ sudo chmod a+r /usr/local/cuda/include/cudnn.h
+$ sudo chmod a+r /usr/local/cuda/lib64/libcudnn*
+
+6. Install libcupti: $ sudo apt-get install libcupti-dev
+
+7. Install tensorflow 1.8, activate the environment first, then
+(tensorflow-gpu)$ pip install --ignore-installed --upgrade https://storage.googleapis.com/tensorflow/linux/gpu/tensorflow_gpu-1.8.0-cp36-cp36m-linux_x86_64.whl
+
+8. Finally, run the following code in Python to make sure tensorflow is successfully installed.
+>>> import tensorflow as tf
+
+>>> hello = tf.constant('Hello, World!')
+
+>>> sess = tf.Session()
+
+>>> print(sess.run(hello))

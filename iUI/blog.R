@@ -25,23 +25,23 @@ div_blog <- tags$div(
           id = "blog_nav_frame",
           tags$div(class = "inner_blog_space"), # horizontal space on top
           tags$div(
-            id = "blog_nav_content",
-            tags$div(
-              id = "blog_nav_meat",
-              tags$h3(style="padding:0;margin:3px 0;color:white","Blog list"),
-              uiOutput("blog_nav_list")
-            )
-          ),
-          tags$div(class = "inner_blog_space"), # horizontal space in middle
-          tags$div(
             id = "bloggers_content",
             tags$div(
               id = "bloggers_meat",
-              tags$h3(style="padding:0;margin:3px 0;color:white","Bloggers"),
+              tags$h3(class = "blog_post_l1_eq","Bloggers"),
               uiOutput("blog_bloggers")
             )
           ),
-          tags$div(class = "inner_blog_space") # horizontal space on top
+          tags$div(class = "inner_blog_space"), # horizontal space on top
+          tags$div(
+            id = "blog_nav_content",
+            tags$div(
+              id = "blog_nav_meat",
+              tags$h3(class = "blog_post_l1_eq","Blog list"),
+              uiOutput("blog_nav_list")
+            )
+          ),
+          tags$div(class = "inner_blog_space") # horizontal space in middle
         )
       )
     )

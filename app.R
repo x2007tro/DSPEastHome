@@ -9,7 +9,6 @@ library(readxl)
 library(dplyr)
 library(httr)
 library(assertive)
-library(readtext)
 
 ##
 # Source server and ui components
