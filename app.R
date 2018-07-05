@@ -6,7 +6,7 @@ library(DT)
 library(shinythemes)
 library(googleway)
 library(readxl)
-library(dplyr)
+#library(dplyr)
 library(httr)
 library(assertive)
 
