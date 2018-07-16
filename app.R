@@ -8,7 +8,6 @@ library(googleway)
 library(readxl)
 library(dplyr)
 library(httr)
-library(assertive)
 
 ##
 # Source server and ui components

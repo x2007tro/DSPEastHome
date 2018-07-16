@@ -85,17 +85,17 @@ mainUI <- fluidPage(theme = shinythemes::shinytheme("simplex"),
 		##
 		# Blog
 		##
-		tabPanel(
-		  "Blog",
-		  fluidRow(
-		    column(
-		      width = 12,
-		      align = "left",
-		      style = "border:0px;",
-		      div_blog
-		    )
-		  )
-		),
+		# tabPanel(
+		#   "Blog",
+		#   fluidRow(
+		#     column(
+		#       width = 12,
+		#       align = "left",
+		#       style = "border:0px;",
+		#       div_blog
+		#     )
+		#   )
+		# ),
 		
 		##
 		# About us
